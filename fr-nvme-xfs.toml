@@ -1,0 +1,14 @@
+[global]
+keyboard = "fr"
+country = "fr"
+fqdn = "pveauto.testinstall"
+mailto = "tru@pasteur.fr"
+timezone = "Europe/Paris"
+root_password = "changemenow"
+
+[network]
+source = "from-dhcp"
+
+[disk-setup]
+filesystem = "xfs"
+disk_list = ["nvme0n1"]

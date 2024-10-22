@@ -1,0 +1,16 @@
+[global]
+keyboard = "fr"
+country = "fr"
+fqdn = "pveauto.testinstall"
+mailto = "tru@pasteur.fr"
+timezone = "Europe/Paris"
+root_password = "changemenow"
+
+[network]
+source = "from-dhcp"
+
+[disk-setup]
+filesystem = "zfs"
+zfs.raid = "raid0"
+zfs.hdsize = 150
+disk_list = ["nvme0n1"]
