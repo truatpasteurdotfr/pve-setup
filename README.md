@@ -58,8 +58,8 @@ source = "from-dhcp"
 filesystem = "xfs"
 disk_list = ["nvme0n1"]
 EOF2
-proxmox-auto-install-assistant prepare-iso proxmox-ve_8.2-2.iso --fetch-from iso --answer-file fr-nvme-xfs.toml
-sudo dd if= of=/dev/sdxxxx bs=8M status=progress
+proxmox-auto-install-assistant prepare-iso proxmox-ve_8.2-2.iso --fetch-from iso --answer-file fr-nvme-zfs.toml
+sudo dd if=proxmox-ve_8.2-2-auto-from-iso.iso of=/dev/sdxxxx bs=8M status=progress
 ```
 # unattended USB key with url
 - fetch the GA iso image
@@ -67,7 +67,7 @@ sudo dd if= of=/dev/sdxxxx bs=8M status=progress
 ```
 [ -f proxmox-ve_8.2-2.iso ] || wget https://enterprise.proxmox.com/iso/proxmox-ve_8.2-2.iso
 proxmox-auto-install-assistant prepare-iso proxmox-ve_8.2-2.iso --fetch-from http --url "https://raw.githubusercontent.com/truatpasteurdotfr/pve-setup/refs/heads/main/fr-nvme-zfs.toml" --cert-fingerprint "FD:6E:9B:0E:F3:98:BC:D9:04:C3:B2:EC:16:7A:7B:0F:DA:72:01:C9:03:C5:3A:6A:6A:E5:D0:41:43:63:EF:65"
-sudo dd if= of=/dev/sdxxxx bs=8M status=progress
+sudo dd if=proxmox-ve_8.2-2-auto-from-http-url-fp.iso of=/dev/sdxxxx bs=8M status=progress
 ```
 # PXE boot
 - convert the customised iso with `pve-iso-2-pxe`
